@@ -1,69 +1,28 @@
-# Assistente Técnico para Projetos de Edifícios Eficientes quanto a Água e Energia
+# gs-nlp-chatbot: RAG para Edificios Verdes
 
-**Disciplina:** Processamento de Linguagem Natural, Chatbots & Virtual Agents  
-**Instituição:** FIAP — Faculdade de Informática e Administração Paulista  
-**Professor:** Sérgio Palmiere  
+Sistema RAG (Retrieval-Augmented Generation) para consulta sobre sustentabilidade em edificios Net Zero. LangChain + FAISS + embeddings HuggingFace. GS 2026.1, FIAP.
 
-## Integrantes
+## Tecnologias
 
-| Nome | RM |
-|------|----|
-| Arthur Baptista dos Santos | 565346 |
-| João Pedro de Moura Dutra Franco | 561738 |
-| Nelson Félix Neto | 565603 |
+Python 3.10+ · LangChain · FAISS · HuggingFace · Google Colab · MIT License
 
----
+## O que faz
 
-## Sobre o Projeto
+Assistente conversacional para normas e praticas de edificios sustentaveis (LEED, BREEAM, ABNT NBR, Net Zero).
 
-Sistema RAG (Retrieval-Augmented Generation) especializado em **edifícios verdes e Net Zero de energia e água**, capaz de responder perguntas técnicas com precisão citando obrigatoriamente a fonte de cada informação.
+Pipeline RAG: Documentos → Chunking → Embeddings → FAISS VectorStore → Recuperacao semantica → LLM
 
-O pipeline foi construído integralmente em ambiente local, sem dependência de APIs externas pagas, utilizando:
+## Como executar
 
-- **LLM:** Qwen2.5:3b via Ollama
-- **Embeddings:** `intfloat/multilingual-e5-base`
-- **Banco vetorial:** ChromaDB com persistência em disco
-- **Corpus:** 15 documentos técnicos (normas, relatórios e manuais) — 95 chunks indexados
+Abra o notebook no Google Colab e execute todas as celulas em ordem.
 
-## Estrutura do Repositório
+## Arquivos
 
-```
-├── GS_1º_(SEM)_Processamento_de_Linguagem_Natural,_Chatbots_&_Virtual_Agents (1).ipynb
-│     Pipeline completo: corpus → limpeza → chunking → embeddings → RAG → avaliação → t-SNE
-│
-├── Relatorio_Critico_GS_RAG_ABNT.docx
-│     Relatório crítico em formato ABNT com análise dos resultados
-│
-├── link_video.txt
-│     Link do vídeo de apresentação no YouTube
-│
-└── README.md
-```
+- Notebook principal: pipeline RAG completo com LangChain e FAISS
+- Relatorio tecnico em formato ABNT
 
-## Etapas do Notebook
+## Autor
 
-| Etapa | Descrição |
-|-------|-----------|
-| 1 | Instalações críticas (Ollama, ChromaDB, SentenceTransformers) |
-| 2 | Imports e configuração global |
-| 3 | Inicialização do servidor LLM local (Qwen2.5:3b) |
-| 4 | Definição e criação do corpus (15 documentos, 3 categorias) |
-| 5 | Extração e limpeza de textos |
-| 6 | Chunking semântico (95 chunks, média 129 tokens) |
-| 7 | Embeddings e indexação no ChromaDB |
-| 8 | Pipeline RAG com citação de fontes |
-| 9 | Avaliação: 10 perguntas técnicas + comparação RAG vs. LLM puro |
-| 10 | Visualização t-SNE + clusters K-Means |
-
-## Resultados
-
-- **Taxa de sucesso:** 9/10 perguntas respondidas com cobertura verificada manualmente
-- **Similaridade máxima média:** 0,875
-- **Precisão técnica RAG vs. LLM puro:** 4,7/5 vs. 2,0/5
-- **Alucinação RAG vs. LLM puro:** 1/5 vs. 4/5
-
-## Vídeo de Apresentação
-
-[![Assistente RAG — Edifícios Verdes e Net Zero](https://img.youtube.com/vi/_eCXcS0mh9k/0.jpg)](https://youtu.be/_eCXcS0mh9k)
-
-[Assistir no YouTube](https://youtu.be/_eCXcS0mh9k)
+Arthur Baptista dos Santos
+RM 565346 · Inteligencia Artificial · FIAP 2025-2026
+https://github.com/Arthur-Baptista-dos-Santos
